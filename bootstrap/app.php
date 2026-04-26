@@ -17,6 +17,9 @@ return Application::configure(basePath: dirname(__DIR__))
             HandleInertiaRequests::class,
             AddLinkHeadersForPreloadedAssets::class,
         ]);
+        $middleware->alias([
+            'check.user.agent' => \App\Http\Middleware\CheckUserAgent::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
