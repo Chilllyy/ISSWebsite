@@ -1,6 +1,6 @@
-import NavItem from "./NavItem";
-import ThemeSwitcher from "./ThemeSwitcher";
-import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import NavItem from "@/components/ui/NavItem";
+import ThemeSwitcher from "../ThemeSwitcher";
+import { BackgroundBeamsWithCollision } from "./background-beams-with-collision";
 import { FaGithub } from 'react-icons/fa';
 const Navbar = () => {
     return (
@@ -9,7 +9,7 @@ const Navbar = () => {
                 <BackgroundBeamsWithCollision>
                 <div className="flex h-full w-full items-center">
                     <img className="h-full [image-rendering:pixelated] aspect-square" src="images/spaceman.png" alt="Spaceman Logo" />
-                    <div className="font-extrabold text-5xl px-10 text-zinc-800 dark:text-amber-300"><p>ISS Urine Tank Display</p></div>
+                    <div className="font-extrabold text-5xl px-10"><p>ISS Urine Tank Display</p></div>
                 </div>
                 <ul className="flex h-32 w-full justify-end items-center">
                     <NavItem href="" label="Home" />      
