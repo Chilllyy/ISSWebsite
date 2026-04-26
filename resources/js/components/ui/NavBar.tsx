@@ -5,7 +5,7 @@ import { FaGithub } from 'react-icons/fa';
 const Navbar = () => {
     return (
         <div>
-            <nav className="flex h-48 bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-neutral-300">
+            <nav className="flex h-48 primary primary-text">
                 <BackgroundBeamsWithCollision>
                 <div className="flex h-full w-full items-center">
                     <img className="h-full [image-rendering:pixelated] aspect-square" src="images/spaceman.png" alt="Spaceman Logo" />

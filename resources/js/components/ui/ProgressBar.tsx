@@ -20,7 +20,7 @@ export default function ProgressBar({ progress = 0, chunks = 10, interval = 100 
     return (
         <div className="flex">
             {Array.from({ length: chunks }).map((_, index) => (
-                <div key={index} className={`flex aspect-square w-6 border border-neutral-900 dark:border-neutral-100 rounded transition-colors duration-300 ease-in-out ${index < filledChunks ? 'bg-yellow-500 dark:bg-amber-300' : ''}`}></div>
+                <div key={index} className={`flex aspect-square w-6 border border-neutral-900 dark:border-neutral-50 rounded transition-colors duration-300 ease-in-out ${index < filledChunks ? 'bg-yellow-500 dark:bg-amber-300' : ''}`}></div>
             ))}
         </div>
     );

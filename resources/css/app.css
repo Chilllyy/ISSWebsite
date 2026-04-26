@@ -16,3 +16,19 @@
         @apply transition-colors duration-500 ease-in-out;
     }
 }
+
+.primary {
+    @apply bg-neutral-50 dark:bg-neutral-900
+}
+
+.primary-text {
+    @apply text-neutral-900 dark:text-neutral-50
+}
+
+.secondary {
+    @apply bg-yellow-500 dark:bg-amber-300
+}
+
+.secondary-text {
+    @apply font-bold text-yellow-500 dark:text-amber-300
+}
