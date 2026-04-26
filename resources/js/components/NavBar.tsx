@@ -1,4 +1,5 @@
 import NavItem from "./NavItem";
+import ThemeSwitcher from "./ThemeSwitcher";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 import { FaGithub } from 'react-icons/fa';
 const Navbar = () => {
@@ -15,7 +16,8 @@ const Navbar = () => {
                     <NavItem href="" label="Mods" />
                     <NavItem href="" label="FAQ" />
                     <NavItem href="" label="Contact" />
-                    <li className="px-5 mx-4"><a href="https://github.com/Chilllyy"><FaGithub className="h-12 w-12" /></a></li>
+                    <li className="pr-5 mx-2 transform duration-300 ease-in-out hover:scale-110"><a href="https://github.com/Chilllyy"><FaGithub className="h-12 w-12" /></a></li>
+                    <li className="pr-5 mx-2"><ThemeSwitcher /></li>
                 </ul>
                 </BackgroundBeamsWithCollision>
             </nav>
