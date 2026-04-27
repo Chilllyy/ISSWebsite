@@ -2,5 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::inertia('/', 'welcome')->name('home')
-->middleware('check.user.agent');
+Route::inertia('/', 'welcome')
+->middleware('check.user.agent')->name('home');
+
+Route::inertia('/faq', 'faq')->name('faq');
