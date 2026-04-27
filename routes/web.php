@@ -1,14 +1,12 @@
 <?php
 
 use App\Models\Issdatamodel;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
-        'datapoints' => IssdataModel::where('timestamp', '>=', Carbon::today()->subDay())->get()->values(),
+        'datapoints' => IssdataModel::where('timestamp', '>=', now()->subDay())->orderBy('timestamp', 'asc')->get()
     ]);
 })->middleware('check.user.agent')->name('home');
 
