@@ -20,7 +20,7 @@ class CheckUserAgent
         $userAgent = $request->header('User-Agent');
         if ($userAgent && str_contains($userAgent, 'okhttp/4.12.0')) {
             Log::info("Received okhttp version 4.12.0 request, redirecting to new API");
-            return Inertia::location('https://iss.chillywilly.me/');
+            return Inertia::location(route('api.value'));
         }
         return $next($request);
     }
