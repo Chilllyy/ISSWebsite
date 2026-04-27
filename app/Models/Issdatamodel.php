@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Issdatamodel extends Model
 {
     protected $fillable = ['timestamp', 'value'];
+    public $timestamps = false;
     /** @use HasFactory<\Database\Factories\IssdatamodelFactory> */
     use HasFactory;
 }
