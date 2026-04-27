@@ -1,10 +1,18 @@
 import Navbar from '@/components/ui/NavBar';
 import ProgressBar from '@/components/ui/ProgressBar';
 import ISSChart from '@/components/ui/ISSChart';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
+import { useEffect } from 'react';
 
 
 export default function Welcome() {
+    const { datapoints = [] } = usePage().props;
+
+    const latestDatapoint = datapoints.length > 0 ? datapoints[datapoints.length - 1] : null;
+    const latestLevel = latestDatapoint ? latestDatapoint.value : 0;
+    
+
+
     return (
         <div>
             <Navbar />
@@ -20,12 +28,12 @@ export default function Welcome() {
                 <div className="my-0 w-full">
                     <h1 className="text-4xl secondary-text">Real-Time Tracking</h1>
                     <div className="pl-5">
-                        <div className="flex">Tank Level: <p className="pl-2" id="tank-level">0%</p></div>
-                        <ProgressBar progress={60}/>
+                        <div className="flex">Tank Level: <p className="pl-2" id="tank-level">{latestLevel}%</p></div>
+                        <ProgressBar progress={latestLevel} />
                     </div>
                 </div>
                 <div className="mx-auto w-full pr-10">
-                    <ISSChart points={[65, 68, 70]} labels={['Jan', 'Feb', 'Mar']} chartname="Urine Tank Qty. (%)"/>
+                    <ISSChart datapoints={datapoints} />
                 </div>
             </div>
         </div>
