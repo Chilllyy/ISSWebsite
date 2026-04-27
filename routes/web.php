@@ -8,7 +8,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
-        'datapoints' => IssdataModel::where('timestamp', '>=', Carbon::today()->subDay())->get()->reverse()->values(),
+        'datapoints' => IssdataModel::where('timestamp', '>=', Carbon::today()->subDay())->get()->values(),
     ]);
 })->middleware('check.user.agent')->name('home');
 
