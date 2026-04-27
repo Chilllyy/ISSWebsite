@@ -9,10 +9,14 @@ import {
     ResponsiveContainer
 } from 'recharts';
 
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
+
 export default function ISSChart({ datapoints }) {
 
     const data = datapoints.map(p => ({
-        name: new Date(p.timestamp).toLocaleTimeString(),
+        name: dayjs(p.timestamp).fromNow(),
         value: Number(p.value)
     }));
 
