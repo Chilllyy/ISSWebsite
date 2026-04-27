@@ -12,6 +12,6 @@ class IssdatamodelSeeder extends Seeder
      */
     public function run(): void
     {
-        Issdatamodel::factory(24)->create();
+        Issdatamodel::factory(100)->create();
     }
 }
