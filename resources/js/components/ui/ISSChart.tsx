@@ -11,28 +11,31 @@ import {
 
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import CustomTooltip from '@/components/ui/CustomTooltip';
 dayjs.extend(relativeTime);
 
 export default function ISSChart({ datapoints }) {
 
     const data = datapoints.map(p => ({
-        name: dayjs(p.timestamp).fromNow(),
+        name: new Date(p.timestamp).getTime(),
         value: Number(p.value)
     }));
+
+    function formatRelativeTime(ts) {
+        return dayjs(ts).fromNow();
+    }
 
     return (
         <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={data}>
 
                 <defs>
-                    {/* Gradient under line */}
                     <linearGradient id="issGradient" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stopColor="rgba(252, 211, 77, 0.4)" />
                         <stop offset="100%" stopColor="rgba(252, 211, 77, 0)" />
                     </linearGradient>
 
-                    {/* Neon glow */}
-                    <filter id="glow">
+|                    <filter id="glow">
                         <feGaussianBlur stdDeviation="4" result="blur" />
                         <feMerge>
                             <feMergeNode in="blur" />
@@ -43,19 +46,11 @@ export default function ISSChart({ datapoints }) {
 
                 <CartesianGrid stroke="rgba(255,255,255,0.1)" />
 
-                <XAxis dataKey="name" stroke="rgba(255,255,255,0.6)" />
+                <XAxis dataKey="name" tickFormatter={(t) => formatRelativeTime(t)}stroke="rgba(255,255,255,0.6)" />
                 <YAxis stroke="rgba(255,255,255,0.6)" />
 
-                <Tooltip
-                    cursor={{ stroke: 'rgba(252, 211, 77, 0.3)' }}
-                    contentStyle={{
-                        backgroundColor: '#111827',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        color: '#fff'
-                    }}
-                />
+                <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(252, 211, 77, 0.3)' }} />
 
-                {/* 🌈 THIS is what actually draws the gradient */}
                 <Area
                     type="monotone"
                     dataKey="value"
@@ -63,7 +58,6 @@ export default function ISSChart({ datapoints }) {
                     fill="url(#issGradient)"
                 />
 
-                {/* ✨ neon line on top */}
                 <Line
                     type="monotone"
                     dataKey="value"
