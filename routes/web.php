@@ -6,7 +6,11 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
-        'datapoints' => IssdataModel::where('timestamp', '>=', now()->subDay())->orderBy('timestamp', 'asc')->get()
+        'datapoints' => Issdatamodel::selectRaw("DATE_FORMAT(`timestamp`, '%Y-%m-%d %H:%i:%00') AS bucket,
+        AVG(value) AS value")->where('timestamp', '>=', now()->subDay())
+        ->groupBy('bucket')
+        ->orderBy('bucket')
+        ->get()
     ]);
 })->middleware('check.user.agent')->name('home');
 
