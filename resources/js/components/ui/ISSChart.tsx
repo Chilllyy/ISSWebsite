@@ -47,7 +47,7 @@ export default function ISSChart({ datapoints }) {
                 <CartesianGrid stroke="rgba(255,255,255,0.1)" />
 
                 <XAxis dataKey="name" tickFormatter={(t) => formatRelativeTime(t)}stroke="rgba(255,255,255,0.6)" />
-                <YAxis stroke="rgba(255,255,255,0.6)" />
+                <YAxis stroke="rgba(255,255,255,0.6)" domain={[0, 100]}/>
 
                 <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(252, 211, 77, 0.3)' }} />
 
