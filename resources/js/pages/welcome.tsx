@@ -16,15 +16,15 @@ export default function Welcome() {
     return (
         <div>
             <Navbar />
-            <div className="flex flex-col max-w-1/2 p-5">
-                <h1 className="text-4xl secondary-text">Monitoring ISS Urine Tank</h1>
-                <div className="pl-5 max-w-3/4 text-2xl">
+            <div className="flex flex-col md:max-w-1/2 p-5">
+                <h1 className="text-2xl md:text-4xl secondary-text">Monitoring ISS Urine Tank</h1>
+                <div className="pl-5 md:max-w-3/4 md:text-2xl">
                     <p>Instant, online access to the fullness level of the Urine Tank on the International Space Station</p>
                     <p>All from a single mod, for various games</p>
                 </div>
                 
             </div>
-            <div className="flex flex-row p-5 h-128">
+            <div className="flex flex-col md:flex-row p-5 h-128">
                 <div className="my-0 w-full">
                     <h1 className="text-4xl secondary-text">Real-Time Tracking</h1>
                     <div className="pl-5">
@@ -32,7 +32,7 @@ export default function Welcome() {
                         <ProgressBar progress={latestLevel} />
                     </div>
                 </div>
-                <div className="mx-auto w-full pr-10">
+                <div className="mx-auto w-full py-10 h-1/2 md:h-full pr-10">
                     <ISSChart datapoints={datapoints} />
                 </div>
             </div>
