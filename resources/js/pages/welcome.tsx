@@ -21,6 +21,7 @@ export default function Welcome() {
                 <div className="pl-5 md:max-w-3/4 md:text-2xl">
                     <p>Instant, online access to the fullness level of the Urine Tank on the International Space Station</p>
                     <p>All from a single mod, for various games</p>
+                    <sub className="text-xs">Inspired by, but not affiliated with <a className="secondary-text" href="https://x.com/ISSPissTracker">@ISSPissTracker</a></sub>
                 </div>
                 
             </div>
