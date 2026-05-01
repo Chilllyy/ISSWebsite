@@ -19,10 +19,6 @@ const Navbar = ({children}) => {
                     {menuOpen ? <FaTimes className="h-8 w-8" /> : <FaBars className="h-8 w-8" />}
                 </div>
                 <ul className={`flex flex-col md:flex-row scale-125 top-64 md:scale-100 absolute md:static gap-3 md:gap-0 h-32 w-full justify-end items-center ${menuOpen ? "" : "hidden md:flex"}`}>
-                    <NavItem href={route('home')} label="Home" />
-                    <NavItem href="" label="Mods" />
-                    <NavItem href={route('faq')} label="FAQ" />
-                    <NavItem href="" label="Contact" />
                     <li className="pr-5 mx-2 transform duration-300 ease-in-out hover:scale-110"><a href="https://github.com/Chilllyy"><FaGithub className="h-12 w-12" /></a></li>
                     <li className="pr-5 mx-2"><ThemeSwitcher /></li>
                 </ul>
