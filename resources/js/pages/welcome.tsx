@@ -1,8 +1,9 @@
 import Navbar from '@/components/ui/NavBar';
 import ProgressBar from '@/components/ui/ProgressBar';
 import ISSChart from '@/components/ui/ISSChart';
+import ModItemWidget from '@/components/ui/ModItemWidget';
 import { Head, usePage } from '@inertiajs/react';
-import { useEffect } from 'react';
+
 
 
 export default function Welcome() {
@@ -23,7 +24,6 @@ export default function Welcome() {
                     <p>All from a single mod, for various games</p>
                     <sub className="text-xs">Inspired by, but not affiliated with <a className="secondary-text" href="https://x.com/ISSPissTracker">@ISSPissTracker</a></sub>
                 </div>
-                
             </div>
             <div className="flex flex-col md:flex-row p-5 h-128">
                 <div className="my-0 w-full">
@@ -33,8 +33,17 @@ export default function Welcome() {
                         <ProgressBar progress={latestLevel} />
                     </div>
                 </div>
-                <div className="mx-auto w-full py-10 h-1/2 md:h-full pr-10">
+                <div className="mx-auto w-full py-10 h-full h-full pr-10">
                     <ISSChart datapoints={datapoints} />
+                </div>
+            </div>
+            <div className="flex flex-col md:flex-row p-5 h-128">
+                <div className="my-0 w-full">
+                    <h1 className="text-4xl secondary-text">Available Mods</h1>
+                    <ul>
+                        <ModItemWidget name="Minecraft" desc="Adds an on screen element for the Urine Tank Quantity" src="images/spaceman.png" url="https://modrinth.com/mod/issonscreendisplay" alt="Minecraft ISS On Screen Display" />
+                        
+                    </ul>
                 </div>
             </div>
         </div>

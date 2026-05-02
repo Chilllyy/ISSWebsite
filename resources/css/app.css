@@ -25,6 +25,10 @@
     @apply text-neutral-900 dark:text-neutral-50
 }
 
+.primary-text-inverse {
+    @apply text-neutral-50 dark:text-neutral-900
+}
+
 .secondary {
     @apply bg-yellow-500 dark:bg-amber-300
 }
