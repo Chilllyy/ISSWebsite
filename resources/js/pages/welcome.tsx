@@ -41,7 +41,7 @@ export default function Welcome() {
                 <div className="my-0 w-full">
                     <h1 className="text-4xl secondary-text">Available Mods</h1>
                     <ul>
-                        <ModItemWidget name="Minecraft" desc="Adds an on screen element for the Urine Tank Quantity" src="images/spaceman.png" url="https://modrinth.com/mod/issonscreendisplay" alt="Minecraft ISS On Screen Display" />
+                        <ModItemWidget name="Minecraft" desc="Adds an on screen element for the Urine Tank Quantity" src="images/minecraft_website_graphic.png" url="https://modrinth.com/mod/issonscreendisplay" alt="Minecraft ISS On Screen Display" />
                         
                     </ul>
                 </div>
