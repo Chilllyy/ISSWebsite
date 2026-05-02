@@ -6,7 +6,7 @@ export default function ModItemWidget({name, desc, src, alt, url}) {
                 <p className="flex">{name}</p>
                 <p className="flex">{desc}</p>
                 <a href={url}>
-                    <button className="secondary primary-text-inverse p-2 rounded-2xl">
+                    <button className="hover:cursor-pointer secondary primary-text-inverse p-2 rounded-2xl">
                         Details
                     </button>
                 </a>
