@@ -25,7 +25,7 @@ export default function Welcome() {
                     <sub className="text-xs">Inspired by, but not affiliated with <a className="secondary-text" href="https://x.com/ISSPissTracker">@ISSPissTracker</a></sub>
                 </div>
             </div>
-            <div className="flex flex-col md:flex-row p-5 h-128">
+            <div className="flex flex-col md:flex-row p-5 h-64">
                 <div className="my-0 w-full">
                     <h1 className="text-4xl secondary-text">Real-Time Tracking</h1>
                     <div className="pl-5">
@@ -33,16 +33,15 @@ export default function Welcome() {
                         <ProgressBar progress={latestLevel} />
                     </div>
                 </div>
-                <div className="mx-auto w-full py-10 h-full h-full pr-10">
+                <div className="mx-auto w-full py-10 h-80 pr-10">
                     <ISSChart datapoints={datapoints} />
                 </div>
             </div>
-            <div className="flex flex-col md:flex-row p-5 h-128">
-                <div className="my-0 w-full">
+            <div className="p-5">
+                <div className="w-full">
                     <h1 className="text-4xl secondary-text">Available Mods</h1>
-                    <ul>
+                    <ul className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4">
                         <ModItemWidget name="Minecraft" desc="Adds an on screen element for the Urine Tank Quantity" src="images/minecraft_website_graphic.png" url="https://modrinth.com/mod/issonscreendisplay" alt="Minecraft ISS On Screen Display" />
-                        
                     </ul>
                 </div>
             </div>
