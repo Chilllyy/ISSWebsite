@@ -1,4 +1,5 @@
 import Navbar from '@/components/ui/NavBar';
+import Footer from '@/components/ui/Footer';
 import ProgressBar from '@/components/ui/ProgressBar';
 import ISSChart from '@/components/ui/ISSChart';
 import ModItemWidget from '@/components/ui/ModItemWidget';
@@ -45,6 +46,7 @@ export default function Welcome() {
                     </ul>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

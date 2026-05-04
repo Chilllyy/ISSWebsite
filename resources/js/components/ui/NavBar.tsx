@@ -3,7 +3,7 @@ import ThemeSwitcher from "../ThemeSwitcher";
 import { BackgroundBeamsWithCollision } from "./background-beams-with-collision";
 import { FaGithub, FaBars, FaTimes } from 'react-icons/fa';
 import { useState } from "react";
-const Navbar = ({children}) => {
+const Navbar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -24,7 +24,6 @@ const Navbar = ({children}) => {
                 </ul>
                 </BackgroundBeamsWithCollision>
             </nav>
-            {children}
         </div>
     );
 };
