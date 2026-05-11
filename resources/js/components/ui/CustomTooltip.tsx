@@ -4,6 +4,8 @@ export default function CustomTooltip({active, payload, label}) {
     if (!active || !payload || !payload.length) return null;
     const ts = label;
 
+    console.log(ts);
+
     return (
         <div style={{
             backgroundColor: '#111827',

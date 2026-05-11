@@ -92,11 +92,14 @@ export default function ISSChart({ datapoints }) {
 
                 
                 <XAxis
+                    dataKey="name"
+                    tickFormatter={(t) => formatRelativeTime(t)}
                     stroke={colors.axis}
                     tick={{ fill: colors.axis }}
                 />
                 
-                <YAxis
+                <YAxis 
+                    domain={[0, 100]}
                     stroke={colors.axis}
                     tick={{ fill: colors.axis }}
                 />
