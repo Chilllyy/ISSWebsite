@@ -45,7 +45,13 @@ export default function ISSChart({ datapoints }) {
         grid: "rgba(255,255,255,0.06)",
         axis: "rgba(255,255,255,0.55)",
         tooltipCursor: "rgba(250, 204, 21, 0.25)",
-        dotStroke: "#111827"
+        dotStroke: "#111827",
+        tooltip: {
+            background: "#111827",
+            primary: "rgba(252, 211, 77)",
+            secondary: "#aaa",
+            tertiary: "#666"
+        }
     }
     : { //Light
         line: "rgb(217, 119, 6)",
@@ -54,7 +60,14 @@ export default function ISSChart({ datapoints }) {
         grid: "rgba(0,0,0,0.25)",
         axis: "rgba(0,0,0,0.75)",
         tooltipCursor: "rgba(217, 119, 6, 0.2)",
-        dotStroke: "#ffffff"
+        dotStroke: "#ffffff",
+        tooltip: {
+            background: "rgba(225,225,225)",
+            border: "1px solid black",
+            primary: "rgba(217, 119, 6)",
+            secondary: "rgba(0,0,0,0.25)",
+            tertiary: "rgba(0,0,0,0.75)"
+        }
     };
 
     const data = datapoints.map(p => ({
@@ -104,7 +117,7 @@ export default function ISSChart({ datapoints }) {
                     tick={{ fill: colors.axis }}
                 />
 
-                <Tooltip content={<CustomTooltip />} cursor={{ stroke: colors.tooltipCursor }} />
+                <Tooltip content={<CustomTooltip background={{ background: colors.tooltip }} />} cursor={{ stroke: colors.tooltipCursor }} />
 
                 <Area
                     type="monotone"
